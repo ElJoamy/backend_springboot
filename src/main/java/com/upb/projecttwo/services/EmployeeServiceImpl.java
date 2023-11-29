@@ -35,4 +35,32 @@ public class EmployeeServiceImpl implements EmployeeService{
         return employeeList;
     }
 
+    @Override
+    public Employee deleteEmployeeById(String id) {
+        Employee deletedEmployee = employeeList.stream()
+                .filter(employee -> employee.getEmployeId().equalsIgnoreCase(id))
+                .findFirst()
+                .orElseThrow(() -> new EmployeeNotFoundException(" " + "Employee not found with ID " + id));
+        employeeList.remove(deletedEmployee);
+        return deletedEmployee;
+    }
+
+    @Override
+    public Employee deleteAllEmployees() {
+        employeeList.clear();
+        return null;
+    }
+
+    @Override
+    public Employee updateEmployeeById(String id, Employee employee) {
+        Employee updatedEmployee = employeeList.stream()
+                .filter(employee1 -> employee1.getEmployeId().equalsIgnoreCase(id))
+                .findFirst()
+                .orElseThrow(() -> new EmployeeNotFoundException(" " + "Employee not found with ID " + id));
+        updatedEmployee.setName(employee.getName());
+        updatedEmployee.setLastName(employee.getLastName());
+        updatedEmployee.setEmailId(employee.getEmailId());
+        updatedEmployee.setDeparmentId(employee.getDeparmentId());
+        return updatedEmployee;
+    }
 }
