@@ -352,17 +352,17 @@ AdminService/
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/JZane21">
-            <img src="https://avatars.githubusercontent.com/u/82000556?v=4" width="50;" alt="JZane21"/>
-            <br />
-            <sub><b>Marcos Andres Simon Agreda</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/Amy312">
             <img src="https://avatars.githubusercontent.com/u/42759041?v=4" width="50;" alt="Amy312"/>
             <br />
-            <sub><b>Camila Alejandra Grandy Camacho</b></sub>
+            <sub><b>Ambar Monica Rojas Morales</b></sub>
         </a>
     </td>
+    <td align="center">
+        <a href="https://github.com/JZane21">
+            <img src="https://avatars.githubusercontent.com/u/82000556?v=4" width="50;" alt="JZane21"/>
+            <br />
+            <sub><b>Jose Samuel Carrasco Encinas</b></sub>
+        </a>
+    </td></tr>
 </table>
