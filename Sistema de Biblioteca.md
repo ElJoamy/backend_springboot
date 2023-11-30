@@ -203,7 +203,6 @@ AdminService/
 
 ### Models
 ## Microservicio de Autenticación
-
 ### User
 - `id`: Identificador único del usuario.
 - `username`: Nombre de usuario.
@@ -215,7 +214,6 @@ AdminService/
 - `name`: Nombre del rol.
 
 ## Microservicio de Catálogo
-
 ### Book
 - `id`: Identificador único del libro.
 - `title`: Título del libro.
@@ -224,6 +222,8 @@ AdminService/
 - `publishedYear`: Año de publicación.
 - `quantity`: Cantidad de copias disponibles.
 - `available`: Indica si el libro está disponible o no.
+- `addedBy`: Usuario que añadió el libro al catálogo.
+- `modifiedBy`: Usuario que modificó la información del libro (si aplica).
 
 ### Thesis
 - `id`: Identificador único de la tesis.
@@ -233,6 +233,8 @@ AdminService/
 - `year`: Año de presentación.
 - `quantity`: Cantidad de copias disponibles.
 - `available`: Indica si la tesis está disponible o no.
+- `addedBy`: Usuario que añadió la tesis al catálogo.
+- `modifiedBy`: Usuario que modificó la información de la tesis (si aplica).
 
 ### Magazine
 - `id`: Identificador único de la revista.
@@ -241,9 +243,10 @@ AdminService/
 - `publicationDate`: Fecha de publicación.
 - `quantity`: Cantidad de copias disponibles.
 - `available`: Indica si la revista está disponible o no.
+- `addedBy`: Usuario que añadió la revista al catálogo.
+- `modifiedBy`: Usuario que modificó la información de la revista (si aplica).
 
 ## Microservicio de Préstamos y Devoluciones
-
 ### Loan
 - `id`: Identificador único del préstamo.
 - `userId`: Identificador del usuario que toma el préstamo.
@@ -253,19 +256,16 @@ AdminService/
 - `returnedDate`: Fecha en que se devuelve el ítem.
 
 ## Microservicio de Recomendaciones
-
 ### Recommendation
 - `id`: Identificador único de la recomendación.
 - `userId`: Identificador del usuario al que se le hace la recomendación.
 - `recommendedItems`: Lista de ítems recomendados.
 
 ## Microservicio de Administración
-
-### User (Reutilizado de Autenticación)
+### User
 - `id`: Identificador único del usuario.
 - `username`: Nombre de usuario.
 - `password`: Contraseña del usuario.
 - `roles`: Lista de roles.
 - `isActive`: Indica si el usuario está activo o no.
-- `createdBy`: (Opcional) Usuario que creó este usuario, relevante para usuarios creados por administradores.
-- `createdAt`: Fecha y hora de creación del usuario.
+- `canManageCatalog`: Indica si el usuario puede gestionar el catálogo (añadir, editar, eliminar ítems).
