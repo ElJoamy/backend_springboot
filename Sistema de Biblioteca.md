@@ -340,3 +340,29 @@ AdminService/
 - `/api/admin/catalog/books/create`: Para añadir un nuevo libro al catálogo.
 - `/api/admin/catalog/books/delete/{bookId}`: Para eliminar un libro del catálogo.
 - Lo mismo aplica para `Thesis` y `Magazine`.
+
+## Autores
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/ElJoamy">
+            <img src="https://avatars.githubusercontent.com/u/68487005?v=4" width="50;" alt="ElJoamy"/>
+            <br />
+            <sub><b>Joseph Anthony Meneses Salguero</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/JZane21">
+            <img src="https://avatars.githubusercontent.com/u/82000556?v=4" width="50;" alt="JZane21"/>
+            <br />
+            <sub><b>Marcos Andres Simon Agreda</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Amy312">
+            <img src="https://avatars.githubusercontent.com/u/42759041?v=4" width="50;" alt="Amy312"/>
+            <br />
+            <sub><b>Camila Alejandra Grandy Camacho</b></sub>
+        </a>
+    </td>
+</table>
