@@ -18,4 +18,12 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         ErrorMessage message = new ErrorMessage(HttpStatus.NOT_FOUND, employeeNotFoundException.getMessage());
         return message;
     }
+
+    @ExceptionHandler(DepartmentNotFoundException.class)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorMessage departmentNotFoundHandler(DepartmentNotFoundException departmentNotFoundException) {
+        ErrorMessage message = new ErrorMessage(HttpStatus.NOT_FOUND, departmentNotFoundException.getMessage());
+        return message;
+    }
 }
