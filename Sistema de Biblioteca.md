@@ -222,6 +222,8 @@ AdminService/
 - `author`: Autor del libro.
 - `isbn`: ISBN del libro (International Standard Book Number).
 - `publishedYear`: Año de publicación.
+- `quantity`: Cantidad de copias disponibles.
+- `available`: Indica si el libro está disponible o no.
 
 ### Thesis
 - `id`: Identificador único de la tesis.
@@ -229,12 +231,16 @@ AdminService/
 - `author`: Autor de la tesis.
 - `university`: Universidad donde se presentó.
 - `year`: Año de presentación.
+- `quantity`: Cantidad de copias disponibles.
+- `available`: Indica si la tesis está disponible o no.
 
 ### Magazine
 - `id`: Identificador único de la revista.
 - `title`: Título de la revista.
 - `issueNumber`: Número de la edición.
 - `publicationDate`: Fecha de publicación.
+- `quantity`: Cantidad de copias disponibles.
+- `available`: Indica si la revista está disponible o no.
 
 ## Microservicio de Préstamos y Devoluciones
 
