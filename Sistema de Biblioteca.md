@@ -2,6 +2,7 @@
 ## Microservicio de Autenticación
 ### Arquitectura por Capas
 **Razón**: Este servicio maneja la autenticación y la autorización, lo cual implica una clara separación entre la interfaz de usuario (controladores), la lógica de negocio (servicios), y la persistencia de datos (repositorios). La arquitectura por capas facilita esta separación y es ideal para manejar diferentes niveles de seguridad y acceso a datos.
+
 ```bash
 AuthenticationService/
 │   mvnw
@@ -88,6 +89,7 @@ CatalogService/
 ## Microservicio de Prestamos y Devoluciones
 ### Arquitectura Hexagonal
 **Razón**: Este microservicio interactúa con otros servicios (como el de catálogo) y posiblemente con sistemas externos para gestionar préstamos y devoluciones. La arquitectura hexagonal, también conocida como arquitectura de puertos y adaptadores, es ideal para servicios que requieren múltiples canales de entrada y salida, facilitando la integración y el mantenimiento.
+
 ```bash
 LoanService/
 │   mvnw
@@ -126,6 +128,7 @@ LoanService/
 ## Microservicio de Recomendaciones
 ### Arquitectura por Capas
 **Razón**: Al igual que el servicio de autenticación, este servicio puede beneficiarse de una separación clara entre la interfaz de usuario (controladores), la lógica de negocio (servicios, incluyendo algoritmos de recomendación), y la persistencia de datos (repositorios). La arquitectura por capas soporta bien estas necesidades.
+
 ```bash
 RecommendationService/
 │   mvnw
@@ -196,3 +199,64 @@ AdminService/
 │                   └───admin
 │                           AdminServiceApplicationTests.java
 ```
+
+
+### Models
+## Microservicio de Autenticación
+
+### User
+- `id`: Identificador único del usuario.
+- `username`: Nombre de usuario.
+- `password`: Contraseña del usuario.
+- `roles`: Lista de roles (estudiante, administrador).
+
+### Role
+- `id`: Identificador único del rol.
+- `name`: Nombre del rol.
+
+## Microservicio de Catálogo
+
+### Book
+- `id`: Identificador único del libro.
+- `title`: Título del libro.
+- `author`: Autor del libro.
+- `isbn`: ISBN del libro.
+- `publishedYear`: Año de publicación.
+
+### Thesis
+- `id`: Identificador único de la tesis.
+- `title`: Título de la tesis.
+- `author`: Autor de la tesis.
+- `university`: Universidad donde se presentó.
+- `year`: Año de presentación.
+
+### Magazine
+- `id`: Identificador único de la revista.
+- `title`: Título de la revista.
+- `issueNumber`: Número de la edición.
+- `publicationDate`: Fecha de publicación.
+
+## Microservicio de Préstamos y Devoluciones
+
+### Loan
+- `id`: Identificador único del préstamo.
+- `userId`: Identificador del usuario que toma el préstamo.
+- `itemId`: Identificador del ítem prestado.
+- `loanDate`: Fecha en que se realizó el préstamo.
+- `dueDate`: Fecha de devolución esperada.
+- `returnedDate`: Fecha en que se devuelve el ítem.
+
+## Microservicio de Recomendaciones
+
+### Recommendation
+- `id`: Identificador único de la recomendación.
+- `userId`: Identificador del usuario al que se le hace la recomendación.
+- `recommendedItems`: Lista de ítems recomendados.
+
+## Microservicio de Administración
+
+### User (Reutilizado de Autenticación)
+- `id`: Identificador único del usuario.
+- `username`: Nombre de usuario.
+- `password`: Contraseña del usuario.
+- `roles`: Lista de roles.
