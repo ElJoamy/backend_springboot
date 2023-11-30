@@ -220,7 +220,7 @@ AdminService/
 - `id`: Identificador único del libro.
 - `title`: Título del libro.
 - `author`: Autor del libro.
-- `isbn`: ISBN del libro.
+- `isbn`: ISBN del libro (International Standard Book Number).
 - `publishedYear`: Año de publicación.
 
 ### Thesis
