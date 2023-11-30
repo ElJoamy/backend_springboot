@@ -266,3 +266,6 @@ AdminService/
 - `username`: Nombre de usuario.
 - `password`: Contraseña del usuario.
 - `roles`: Lista de roles.
+- `isActive`: Indica si el usuario está activo o no.
+- `createdBy`: (Opcional) Usuario que creó este usuario, relevante para usuarios creados por administradores.
+- `createdAt`: Fecha y hora de creación del usuario.
