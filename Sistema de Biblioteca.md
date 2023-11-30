@@ -268,4 +268,37 @@ AdminService/
 - `password`: Contraseña del usuario.
 - `roles`: Lista de roles.
 - `isActive`: Indica si el usuario está activo o no.
-- `canManageCatalog`: Indica si el usuario puede gestionar el catálogo (añadir, editar, eliminar ítems).
+- `canManageCatalog`: Indica si el usuario puede gestionar el catálogo (añadir, eliminar ítems).
+
+## Metodos Requeridos
+## Microservicio de Autenticación
+- `registerUser(User user)`: Para registrar nuevos usuarios.
+- `authenticateUser(String username, String password)`: Para autenticar usuarios.
+- `updateUser(User user)`: Para actualizar la información del usuario.
+- `deactivateUser(int userId)`: Para desactivar un usuario.
+- `getUserRoles(int userId)`: Para obtener los roles de un usuario.
+
+## Microservicio de Catálogo
+- `getAllBooks()`: Para obtener todos los libros.
+- `getBookById(int bookId)`: Para obtener un libro por su ID.
+- `addBook(Book book)`: Para añadir un nuevo libro.
+- `updateBook(Book book)`: Para actualizar un libro existente.
+- `deleteBook(int bookId)`: Para eliminar un libro.
+
+- Métodos similares para `Thesis` y `Magazine`.
+
+## Microservicio de Préstamos y Devoluciones
+- `createLoan(Loan loan)`: Para crear un nuevo préstamo.
+- `returnLoan(int loanId)`: Para procesar la devolución de un préstamo.
+- `getLoanDetails(int loanId)`: Para obtener detalles de un préstamo específico.
+- `getUserLoans(int userId)`: Para obtener todos los préstamos de un usuario.
+
+## Microservicio de Recomendaciones
+- `getRecommendations(int userId)`: Para obtener recomendaciones para un usuario.
+- `updateRecommendations(int userId)`: Para actualizar las recomendaciones basadas en nuevos datos.
+
+## Microservicio de Administración
+- `createUser(User user)`: Para crear un nuevo usuario.
+- `updateUser(User user)`: Para actualizar la información de un usuario.
+- `deleteUser(int userId)`: Para eliminar un usuario.
+- `manageCatalogItem(CatalogItem item)`: Para añadir, actualizar o eliminar ítems del catálogo.
