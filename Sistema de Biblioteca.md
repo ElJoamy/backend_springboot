@@ -201,7 +201,7 @@ AdminService/
 ```
 
 
-### Models
+# Models
 ## Microservicio de Autenticación
 ### User
 - `id`: Identificador único del usuario.
@@ -270,20 +270,19 @@ AdminService/
 - `isActive`: Indica si el usuario está activo o no.
 - `canManageCatalog`: Indica si el usuario puede gestionar el catálogo (añadir, eliminar ítems).
 
-## Metodos Requeridos
+
+
+# Metodos Requeridos
 ## Microservicio de Autenticación
-- `registerUser(User user)`: Para registrar nuevos usuarios.
 - `authenticateUser(String username, String password)`: Para autenticar usuarios.
-- `updateUser(User user)`: Para actualizar la información del usuario.
-- `deactivateUser(int userId)`: Para desactivar un usuario.
-- `getUserRoles(int userId)`: Para obtener los roles de un usuario.
 
 ## Microservicio de Catálogo
 - `getAllBooks()`: Para obtener todos los libros.
 - `getBookById(int bookId)`: Para obtener un libro por su ID.
-- `addBook(Book book)`: Para añadir un nuevo libro.
-- `updateBook(Book book)`: Para actualizar un libro existente.
-- `deleteBook(int bookId)`: Para eliminar un libro.
+- `getBookByTitle(String title)`: Para obtener un libro por su título.
+- `getBookByAuthor(String author)`: Para obtener un libro por su autor.
+- `getBookByYear(int year)`: Para obtener un libro por su año de publicación.
+- `getBookByAvailability(boolean available)`: Para obtener todos los libros disponibles.
 
 - Métodos similares para `Thesis` y `Magazine`.
 
@@ -301,4 +300,43 @@ AdminService/
 - `createUser(User user)`: Para crear un nuevo usuario.
 - `updateUser(User user)`: Para actualizar la información de un usuario.
 - `deleteUser(int userId)`: Para eliminar un usuario.
-- `manageCatalogItem(CatalogItem item)`: Para añadir, actualizar o eliminar ítems del catálogo.
+- `createBook(Book book)`: Para añadir un nuevo libro al catálogo.
+- `DeleteBook(int bookId)`: Para eliminar un libro del catálogo.
+- Lo mismo aplica para `Thesis` y `Magazine`.
+
+### Endpoints
+## Microservicio de Autenticación
+- `/api/auth/signin`: Para autenticar usuarios.
+- `/api/auth/logout`: Para cerrar sesión.
+
+## Microservicio de Catálogo
+- `/api/catalog/books`: Para obtener todos los libros.
+- `/api/catalog/books/{bookId}`: Para obtener un libro por su ID.
+- `/api/catalog/books/title/{title}`: Para obtener un libro por su título.
+- `/api/catalog/books/author/{author}`: Para obtener un libro por su autor.
+- `/api/catalog/books/year/{year}`: Para obtener un libro por su año de publicación.
+- `/api/catalog/books/available/{available}`: Para obtener todos los libros disponibles.
+- Métodos similares para `Thesis` y `Magazine`.
+
+## Microservicio de Préstamos y Devoluciones
+- `/api/loan/loans`: Para obtener todos los préstamos.
+- `/api/loan/loans/{loanId}`: Para obtener un préstamo por su ID.
+- `/api/loan/loans/user/{userId}`: Para obtener todos los préstamos de un usuario.
+- `/api/loan/loans/create`: Para crear un nuevo préstamo.
+- `/api/loan/loans/return/{loanId}`: Para procesar la devolución de un préstamo.
+
+## Microservicio de Recomendaciones
+- `/api/recommendation/recommendations/{userId}`: Para obtener recomendaciones para un usuario.
+- `/api/recommendation/recommendations/update/{userId}`: Para actualizar las recomendaciones basadas en nuevos datos.
+
+## Microservicio de Administración
+- `/api/admin/users`: Para obtener todos los usuarios.
+- `/api/admin/users/{userId}`: Para obtener un usuario por su ID.
+- `/api/admin/users/create`: Para crear un nuevo usuario.
+- `/api/admin/users/update/{userId}`: Para actualizar la información de un usuario.
+- `/api/admin/users/delete/{userId}`: Para eliminar un usuario.
+- `/api/admin/catalog/books`: Para obtener todos los libros.
+- `/api/admin/catalog/books/{bookId}`: Para obtener un libro por su ID.
+- `/api/admin/catalog/books/create`: Para añadir un nuevo libro al catálogo.
+- `/api/admin/catalog/books/delete/{bookId}`: Para eliminar un libro del catálogo.
+- Lo mismo aplica para `Thesis` y `Magazine`.
